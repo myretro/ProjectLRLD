@@ -7,15 +7,21 @@
     <title>LRLD</title>
   </head>
   <body>
-    <h3>
-      Welcome to LRLD 😁.
-      <form>
-        <label for="email">Enter your email :</label>
-        <input type="email" name="email" id="email">
-        <label for="password">Enter your password :</label>
-        <input type="password" name="password" id="password">
-        <input type="submit" value="Sign In">
+    <div>
+      <h3>Welcome to LRLD 😁.</h3>
+      <form action="/signin" method="post" class="form">
+        <div>
+          <label for="email">Enter your email :</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div>
+          <label for="password">Enter your password :</label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <div>
+          <input type="submit" value="Sign In" />
+        </div>
       </form>
-    </h3>
+    </div>
   </body>
 </html>

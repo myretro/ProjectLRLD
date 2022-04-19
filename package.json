@@ -1,0 +1,16 @@
+{
+  "name": "ProjectLRLD",
+  "version": "0.0.1",
+  "description": "Top Secret",
+  "main": "./app/app.js",
+  "repository": "https://github.com/myretro/ProjectLRLD.git",
+  "author": "Abhinav Kumar <abhinav.vikash2@gmail.com>",
+  "license": "MIT",
+  "private": null,
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2"
+  }
+}

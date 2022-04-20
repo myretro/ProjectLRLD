@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 10px;
+}
+
+.form {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  background-color: azure;
+  font-size: 30px;
+  flex-direction: column;
+}

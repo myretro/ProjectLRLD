@@ -35,13 +35,13 @@ const checkAuth = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
   }
-  return res.redirect("/fail");
+  return res.redirect("/signin");
 };
 
 //check if user is not auth
 const checkNotAuth = (req, res, next) => {
   if (req.isAuthenticated()) {
-    return res.redirect("/fail");
+    return res.redirect("/dashboard");
   }
   return next();
 };
@@ -51,29 +51,33 @@ app.get("/", checkNotAuth, (req, res) => {
   res.render("index");
 });
 
-app.get("/signin", (req, res) => {
+app.get("/signin", checkNotAuth, (req, res) => {
   res.render("signin");
 });
 
-app.get("/signup", (req, res) => {
+app.get("/signup", checkNotAuth, (req, res) => {
   res.render("signup");
 });
 
 //POST Routes
 app.post("/", checkAuth, (req, res) => {
   console.log(req.body);
-  res.redirect("/", {
+});
+
+app.get("/dashboard", checkAuth, (req, res) => {
+  res.render("dashboard", {
     name: req.user.name,
-  });
+    message: req.user.welcome_message,
+  }); //passing user name to dashboard
 });
 
 app.post(
   "/signin",
   passport.authenticate("local", {
-    failureRedirect: "/fail",
+    failureRedirect: "/",
   }),
   (req, res) => {
-    res.redirect("/");
+    res.redirect("/dashboard");
   }
 );
 

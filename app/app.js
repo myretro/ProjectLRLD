@@ -60,7 +60,7 @@ app.get("/signup", (req, res) => {
 });
 
 //POST Routes
-app.post("/", checkAuth, (req, res, next) => {
+app.post("/", checkAuth, (req, res) => {
   console.log(req.body);
   res.redirect("/", {
     name: req.user.name,

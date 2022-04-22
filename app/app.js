@@ -34,7 +34,7 @@ app.post("/", (req, res, next) => {});
 
 app.post("/signin", (req, res, next) => {});
 
-app.post("/signup", async (req, res, next) => {
+app.post("/signup", async (req, res) => {
   const { name, email, password, welcome_message } = req.body;
   if (!(name && email && password)) {
     return res.status(400).json({ message: "All fields are required" });
